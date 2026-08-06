@@ -36,4 +36,6 @@ public interface ReviewService {
     List<ReviewViewDto> getReviewsForUser(String username);
 
     List<ReviewViewDto> getPendingReviews();
+
+    ReviewEditDto getReviewEditDto(UUID reviewId, String username);
 }

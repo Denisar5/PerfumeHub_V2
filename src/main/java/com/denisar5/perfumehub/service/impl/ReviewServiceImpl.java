@@ -208,4 +208,21 @@ public class ReviewServiceImpl implements ReviewService {
                 .createdAt(review.getCreatedAt())
                 .build();
     }
+
+    @Override
+    @Transactional(readOnly = true)
+    public ReviewEditDto getReviewEditDto(
+            UUID reviewId,
+            String username
+    ) {
+        Review review = findReviewById(reviewId);
+
+        validateOwnership(review, username);
+
+        ReviewEditDto dto = new ReviewEditDto();
+        dto.setRating(review.getRating());
+        dto.setContent(review.getContent());
+
+        return dto;
+    }
 }
