@@ -421,3 +421,34 @@ a {
         min-width: 850px;
     }
 }
+
+.error-card {
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 55px 35px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.error-code {
+    margin-bottom: 10px;
+    color: var(--accent);
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.error-symbol {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 90px;
+}
