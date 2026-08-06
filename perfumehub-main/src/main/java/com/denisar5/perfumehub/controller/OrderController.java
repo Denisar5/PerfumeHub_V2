@@ -25,7 +25,7 @@ public class OrderController {
 
     private final OrderService orderService;
     private final PerfumeService perfumeService;
-    private final ReviewService reviewService;
+
 
     @GetMapping("/my")
     public String getMyOrders(
@@ -93,9 +93,6 @@ public class OrderController {
                 perfumeService.getPerfumeById(perfumeId)
         );
 
-        model.addAttribute(
-                "reviews",
-                reviewService.getApprovedReviewsForPerfume(perfumeId)
-        );
+
     }
 }

@@ -1,0 +1,45 @@
+package com.denisar5.review_service.dto;
+
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.util.UUID;
+
+@Getter
+@Setter
+@NoArgsConstructor
+public class ReviewCreateRequest {
+
+    @NotNull(message = "Perfume ID is required")
+    private UUID perfumeId;
+
+    @NotBlank(message = "Perfume name is required")
+    @Size(max = 100, message = "Perfume name cannot exceed 100 characters")
+    private String perfumeName;
+
+    @NotNull(message = "User ID is required")
+    private UUID userId;
+
+    @NotBlank(message = "Username is required")
+    @Size(max = 30, message = "Username cannot exceed 30 characters")
+    private String username;
+
+    @NotNull(message = "Rating is required")
+    @Min(value = 1, message = "Rating must be at least 1")
+    @Max(value = 5, message = "Rating cannot exceed 5")
+    private Integer rating;
+
+    @NotBlank(message = "Review content is required")
+    @Size(
+            min = 10,
+            max = 1000,
+            message = "Review must be between 10 and 1000 characters"
+    )
+    private String content;
+}

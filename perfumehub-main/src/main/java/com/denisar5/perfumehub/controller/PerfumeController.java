@@ -1,5 +1,6 @@
 package com.denisar5.perfumehub.controller;
 
+import com.denisar5.perfumehub.client.ReviewClient;
 import com.denisar5.perfumehub.dto.request.OrderCreateDto;
 import com.denisar5.perfumehub.dto.request.ReviewCreateDto;
 import com.denisar5.perfumehub.service.PerfumeService;
@@ -18,7 +19,7 @@ import java.util.UUID;
 public class PerfumeController {
 
     private final PerfumeService perfumeService;
-    private final ReviewService reviewService;
+    private final ReviewClient reviewClient;
 
     @GetMapping
     public String getCatalog(Model model) {
@@ -66,7 +67,7 @@ public class PerfumeController {
 
         model.addAttribute(
                 "reviews",
-                reviewService.getApprovedReviewsForPerfume(perfumeId)
+                reviewClient.getApprovedReviewsForPerfume(perfumeId)
         );
     }
 }

@@ -15,14 +15,11 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class AdminReviewController {
 
-    private final ReviewService reviewService;
+
 
     @GetMapping
     public String getPendingReviews(Model model) {
-        model.addAttribute(
-                "reviews",
-                reviewService.getPendingReviews()
-        );
+
 
         return "admin/reviews";
     }
@@ -31,7 +28,7 @@ public class AdminReviewController {
     public String approveReview(
             @PathVariable UUID reviewId
     ) {
-        reviewService.approveReview(reviewId);
+
 
         return "redirect:/admin/reviews?approved=true";
     }
@@ -40,7 +37,7 @@ public class AdminReviewController {
     public String rejectReview(
             @PathVariable UUID reviewId
     ) {
-        reviewService.rejectReview(reviewId);
+
 
         return "redirect:/admin/reviews?rejected=true";
     }
