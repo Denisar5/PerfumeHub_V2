@@ -12,6 +12,10 @@ public class ReviewViewDto {
 
     private UUID id;
 
+    private UUID perfumeId;
+
+    private String perfumeName;
+
     private String username;
 
     private Integer rating;
