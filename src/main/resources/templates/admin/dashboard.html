@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title>Admin Dashboard | PerfumeHub</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link th:href="@{/css/styles.css}"
+          rel="stylesheet">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+<div th:replace="~{fragments/header :: header}"></div>
+
+<main class="container flex-grow-1 py-5">
+
+    <div class="admin-heading mb-4">
+        <p class="form-eyebrow">ADMINISTRATION</p>
+        <h1>Dashboard</h1>
+        <p class="text-muted">
+            Overview of PerfumeHub activity and management tools.
+        </p>
+    </div>
+
+    <section class="row g-4 mb-5">
+
+        <div class="col-sm-6 col-xl-3">
+            <article class="dashboard-stat-card">
+                <p class="dashboard-stat-label">
+                    Total Users
+                </p>
+
+                <h2 th:text="${dashboard.totalUsers}">
+                    0
+                </h2>
+
+                <a th:href="@{/admin/users}">
+                    Manage users
+                </a>
+            </article>
+        </div>
+
+        <div class="col-sm-6 col-xl-3">
+            <article class="dashboard-stat-card">
+                <p class="dashboard-stat-label">
+                    Total Perfumes
+                </p>
+
+                <h2 th:text="${dashboard.totalPerfumes}">
+                    0
+                </h2>
+
+                <a th:href="@{/admin/perfumes}">
+                    Manage perfumes
+                </a>
+            </article>
+        </div>
+
+        <div class="col-sm-6 col-xl-3">
+            <article class="dashboard-stat-card">
+                <p class="dashboard-stat-label">
+                    Total Orders
+                </p>
+
+                <h2 th:text="${dashboard.totalOrders}">
+                    0
+                </h2>
+
+                <a th:href="@{/admin/orders}">
+                    Manage orders
+                </a>
+            </article>
+        </div>
+
+        <div class="col-sm-6 col-xl-3">
+            <article class="dashboard-stat-card">
+                <p class="dashboard-stat-label">
+                    Pending Reviews
+                </p>
+
+                <h2 th:text="${dashboard.pendingReviews}">
+                    0
+                </h2>
+
+                <a th:href="@{/admin/reviews}">
+                    Moderate reviews
+                </a>
+            </article>
+        </div>
+
+    </section>
+
+    <section class="dashboard-navigation mb-5">
+        <h2 class="mb-3">Management</h2>
+
+        <div class="row g-3">
+
+            <div class="col-md-6 col-xl-3">
+                <a th:href="@{/admin/perfumes}"
+                   class="dashboard-navigation-card">
+                    <h3>Perfumes</h3>
+                    <p>
+                        Create, edit, hide or remove products.
+                    </p>
+                </a>
+            </div>
+
+            <div class="col-md-6 col-xl-3">
+                <a th:href="@{/admin/orders}"
+                   class="dashboard-navigation-card">
+                    <h3>Orders</h3>
+                    <p>
+                        Process and update customer orders.
+                    </p>
+                </a>
+            </div>
+
+            <div class="col-md-6 col-xl-3">
+                <a th:href="@{/admin/reviews}"
+                   class="dashboard-navigation-card">
+                    <h3>Reviews</h3>
+                    <p>
+                        Approve or reject customer reviews.
+                    </p>
+                </a>
+            </div>
+
+            <div class="col-md-6 col-xl-3">
+                <a th:href="@{/admin/users}"
+                   class="dashboard-navigation-card">
+                    <h3>Users</h3>
+                    <p>
+                        Manage account roles and access.
+                    </p>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="mb-5">
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2>Latest Orders</h2>
+
+            <a th:href="@{/admin/orders}"
+               class="btn btn-outline-dark btn-sm">
+                View All
+            </a>
+        </div>
+
+        <div th:if="${#lists.isEmpty(dashboard.latestOrders)}"
+             class="empty-state small-empty-state">
+            There are no orders yet.
+        </div>
+
+        <div class="table-responsive"
+             th:unless="${#lists.isEmpty(dashboard.latestOrders)}">
+
+            <table class="table custom-table align-middle">
+
+                <thead>
+                <tr>
+                    <th>Customer</th>
+                    <th>Perfume</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th>Created</th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+                <tr th:each="order : ${dashboard.latestOrders}">
+
+                    <td th:text="${order.customerUsername}">
+                        Customer
+                    </td>
+
+                    <td th:text="${order.perfumeName}">
+                        Perfume
+                    </td>
+
+                    <td th:text="${order.quantity}">
+                        1
+                    </td>
+
+                    <td>
+                        €<span th:text="${#numbers.formatDecimal(
+                                order.totalPrice,
+                                1,
+                                2
+                        )}">
+                            99.99
+                        </span>
+                    </td>
+
+                    <td>
+                        <span class="status-badge"
+                              th:classappend="${
+                                  ' status-' +
+                                  #strings.toLowerCase(order.status.name())
+                              }"
+                              th:text="${order.status}">
+                            PENDING
+                        </span>
+                    </td>
+
+                    <td th:text="${#temporals.format(
+                            order.createdAt,
+                            'dd MMM yyyy HH:mm'
+                    )}">
+                        Date
+                    </td>
+
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+    <section>
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2>Latest Reviews</h2>
+
+            <a th:href="@{/admin/reviews}"
+               class="btn btn-outline-dark btn-sm">
+                View Pending
+            </a>
+        </div>
+
+        <div th:if="${#lists.isEmpty(dashboard.latestReviews)}"
+             class="empty-state small-empty-state">
+            There are no reviews yet.
+        </div>
+
+        <div class="table-responsive"
+             th:unless="${#lists.isEmpty(dashboard.latestReviews)}">
+
+            <table class="table custom-table align-middle">
+
+                <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Perfume</th>
+                    <th>Rating</th>
+                    <th>Moderation</th>
+                    <th>Created</th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+                <tr th:each="review : ${dashboard.latestReviews}">
+
+                    <td th:text="${review.username}">
+                        User
+                    </td>
+
+                    <td th:text="${review.perfumeName}">
+                        Perfume
+                    </td>
+
+                    <td>
+                        <span class="rating"
+                              th:text="${review.rating + '/5'}">
+                            5/5
+                        </span>
+                    </td>
+
+                    <td>
+                        <span class="status-badge"
+                              th:classappend="${review.approved
+                                  ? ' status-completed'
+                                  : ' status-pending'}"
+                              th:text="${review.approved
+                                  ? 'APPROVED'
+                                  : 'PENDING'}">
+                            PENDING
+                        </span>
+                    </td>
+
+                    <td th:text="${#temporals.format(
+                            review.createdAt,
+                            'dd MMM yyyy HH:mm'
+                    )}">
+                        Date
+                    </td>
+
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+</main>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+</body>
+</html>

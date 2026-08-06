@@ -20,6 +20,10 @@ public interface ReviewRepository extends JpaRepository<Review, UUID> {
 
     List<Review> findByApprovedFalseOrderByCreatedAtAsc();
 
+    List<Review> findTop5ByOrderByCreatedAtDesc();
+
+    long countByApprovedFalse();
+
     boolean existsByUserAndPerfume(
             UserEntity user,
             Perfume perfume

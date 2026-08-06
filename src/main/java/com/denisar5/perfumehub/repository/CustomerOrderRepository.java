@@ -18,6 +18,8 @@ public interface CustomerOrderRepository
 
     List<CustomerOrder> findAllByOrderByCreatedAtDesc();
 
+    List<CustomerOrder> findTop5ByOrderByCreatedAtDesc();
+
     List<CustomerOrder> findByStatus(OrderStatus status);
 
     boolean existsByPerfume(Perfume perfume);
