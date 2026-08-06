@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="29de4503-0388-411f-bde8-158c82492ee3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/config/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/config/DataInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/controller/AdminReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/controller/AdminReviewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/controller/PerfumeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/controller/PerfumeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/controller/ReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/controller/ReviewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/entity/Review.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/repository/ReviewRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/service/ReviewService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/service/impl/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/service/impl/AdminServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/service/impl/PerfumeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/service/impl/PerfumeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/service/impl/ReviewServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/PerfumehubMainApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/config/DataInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/config/PasswordConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/controller/AdminController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/controller/AdminOrderController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/controller/AdminPerfumeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/controller/AdminReviewController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/controller/AdminUserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/controller/AuthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/controller/HomeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/controller/OrderController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/controller/PerfumeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/controller/ProfileController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/controller/ReviewController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/dto/request/AdminDashboardDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/dto/request/AdminDashboardOrderDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/dto/request/AdminDashboardReviewDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/dto/request/OrderCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/dto/request/OrderStatusUpdateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/dto/request/PerfumeCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/dto/request/PerfumeEditDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/dto/request/ProfileEditDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/dto/request/RegisterDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/dto/request/ReviewCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/dto/request/ReviewEditDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/dto/request/RoleUpdateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/dto/response/OrderViewDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/dto/response/PerfumeViewDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/dto/response/ReviewViewDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/dto/response/UserViewDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/entity/BaseEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/entity/CustomerOrder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/entity/Perfume.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/entity/Review.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/entity/UserEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/enums/Gender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/enums/OrderStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/enums/UserRole.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/exception/DuplicateResourceException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/exception/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/exception/InvalidOperationException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/exception/ResourceNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/exception/UnauthorizedOperationException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/repository/CustomerOrderRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/repository/PerfumeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/repository/ReviewRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/security/CustomUserDetailsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/security/SecurityConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/service/AdminService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/service/OrderService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/service/PerfumeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/service/ReviewService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/service/impl/AdminServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/service/impl/OrderServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/service/impl/PerfumeServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/service/impl/ReviewServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/denisar5/perfumehub/service/impl/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/Acqua di Giò.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/Xerjoff Erba Pura.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/aventus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/baccarat.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/black-opium.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/bleu de chanel.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/coco.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/dior-sauvage.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/libre.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/oud-wood.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/orders.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/perfume-create.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/perfume-edit.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/perfumes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/reviews.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/users.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/auth/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/auth/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/403.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/500.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/business-error.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/order/my-orders.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/perfume/catalog.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/perfume/details.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile/details.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile/edit.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile/my-reviews.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile/review-edit.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/denisar5/perfumehub/PerfumehubMainApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Denisar5&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Denisar5/PerfumeHub_V2.git&quot;,
+    &quot;accountId&quot;: &quot;a67c450c-f184-4a7e-85c5-fc273072a37f&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="3HXRsc1PG5RGZWmkf6xm1AptP0V" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Spring Boot.PerfumehubMainApplication">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="perfumehub-main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="perfumehub-main" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <configuration name="PerfumehubMainApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="perfumehub-main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.denisar5.perfumehub.PerfumehubMainApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReviewServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="review-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.denisar5.review_service.ReviewServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.30387.90" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="29de4503-0388-411f-bde8-158c82492ee3" name="Changes" comment="" />
+      <created>1786012635674</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1786012635674</updated>
+      <workItem from="1786012637092" duration="81000" />
+      <workItem from="1786012727993" duration="319000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/perfumehub-main" />
+    </ignored-roots>
+  </component>
+</project>
