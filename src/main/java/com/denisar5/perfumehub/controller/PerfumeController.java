@@ -36,6 +36,30 @@ public class PerfumeController {
             @PathVariable UUID perfumeId,
             Model model
     ) {
+        prepareDetailsPage(perfumeId, model);
+
+        if (!model.containsAttribute("orderCreateDto")) {
+            OrderCreateDto orderCreateDto = new OrderCreateDto();
+            orderCreateDto.setPerfumeId(perfumeId);
+            orderCreateDto.setQuantity(1);
+
+            model.addAttribute("orderCreateDto", orderCreateDto);
+        }
+
+        if (!model.containsAttribute("reviewCreateDto")) {
+            ReviewCreateDto reviewCreateDto = new ReviewCreateDto();
+            reviewCreateDto.setPerfumeId(perfumeId);
+
+            model.addAttribute("reviewCreateDto", reviewCreateDto);
+        }
+
+        return "perfume/details";
+    }
+
+    public void prepareDetailsPage(
+            UUID perfumeId,
+            Model model
+    ) {
         model.addAttribute(
                 "perfume",
                 perfumeService.getPerfumeById(perfumeId)
@@ -45,17 +69,5 @@ public class PerfumeController {
                 "reviews",
                 reviewService.getApprovedReviewsForPerfume(perfumeId)
         );
-
-        OrderCreateDto orderCreateDto = new OrderCreateDto();
-        orderCreateDto.setPerfumeId(perfumeId);
-        orderCreateDto.setQuantity(1);
-
-        ReviewCreateDto reviewCreateDto = new ReviewCreateDto();
-        reviewCreateDto.setPerfumeId(perfumeId);
-
-        model.addAttribute("orderCreateDto", orderCreateDto);
-        model.addAttribute("reviewCreateDto", reviewCreateDto);
-
-        return "perfume/details";
     }
 }

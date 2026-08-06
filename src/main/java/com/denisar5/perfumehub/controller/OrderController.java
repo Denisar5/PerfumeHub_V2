@@ -1,7 +1,10 @@
 package com.denisar5.perfumehub.controller;
 
 import com.denisar5.perfumehub.dto.request.OrderCreateDto;
+import com.denisar5.perfumehub.dto.request.ReviewCreateDto;
 import com.denisar5.perfumehub.service.OrderService;
+import com.denisar5.perfumehub.service.PerfumeService;
+import com.denisar5.perfumehub.service.ReviewService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
@@ -22,6 +25,8 @@ import java.util.UUID;
 public class OrderController {
 
     private final OrderService orderService;
+    private final PerfumeService perfumeService;
+    private final ReviewService reviewService;
 
     @GetMapping("/my")
     public String getMyOrders(
@@ -46,11 +51,17 @@ public class OrderController {
             Authentication authentication,
             Model model
     ) {
+        UUID perfumeId = orderCreateDto.getPerfumeId();
+
         if (bindingResult.hasErrors()) {
-            return returnToPerfumeDetails(
-                    orderCreateDto.getPerfumeId(),
-                    model
-            );
+            preparePerfumeDetailsPage(perfumeId, model);
+
+            ReviewCreateDto reviewCreateDto = new ReviewCreateDto();
+            reviewCreateDto.setPerfumeId(perfumeId);
+
+            model.addAttribute("reviewCreateDto", reviewCreateDto);
+
+            return "perfume/details";
         }
 
         orderService.createOrder(
@@ -74,12 +85,18 @@ public class OrderController {
         return "redirect:/orders/my?cancelled=true";
     }
 
-    private String returnToPerfumeDetails(
+    private void preparePerfumeDetailsPage(
             UUID perfumeId,
             Model model
     ) {
-        model.addAttribute("perfumeId", perfumeId);
+        model.addAttribute(
+                "perfume",
+                perfumeService.getPerfumeById(perfumeId)
+        );
 
-        return "redirect:/perfumes/" + perfumeId;
+        model.addAttribute(
+                "reviews",
+                reviewService.getApprovedReviewsForPerfume(perfumeId)
+        );
     }
 }

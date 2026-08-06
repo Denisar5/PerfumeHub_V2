@@ -1,7 +1,9 @@
 package com.denisar5.perfumehub.controller;
 
+import com.denisar5.perfumehub.dto.request.OrderCreateDto;
 import com.denisar5.perfumehub.dto.request.ReviewCreateDto;
 import com.denisar5.perfumehub.dto.request.ReviewEditDto;
+import com.denisar5.perfumehub.service.PerfumeService;
 import com.denisar5.perfumehub.service.ReviewService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -23,6 +25,7 @@ import java.util.UUID;
 public class ReviewController {
 
     private final ReviewService reviewService;
+    private final PerfumeService perfumeService;
 
     @GetMapping("/my")
     public String getMyReviews(
@@ -44,12 +47,21 @@ public class ReviewController {
             @Valid @ModelAttribute("reviewCreateDto")
             ReviewCreateDto reviewCreateDto,
             BindingResult bindingResult,
-            Authentication authentication
+            Authentication authentication,
+            Model model
     ) {
+        UUID perfumeId = reviewCreateDto.getPerfumeId();
+
         if (bindingResult.hasErrors()) {
-            return "redirect:/perfumes/"
-                    + reviewCreateDto.getPerfumeId()
-                    + "?reviewError=true";
+            preparePerfumeDetailsPage(perfumeId, model);
+
+            OrderCreateDto orderCreateDto = new OrderCreateDto();
+            orderCreateDto.setPerfumeId(perfumeId);
+            orderCreateDto.setQuantity(1);
+
+            model.addAttribute("orderCreateDto", orderCreateDto);
+
+            return "perfume/details";
         }
 
         reviewService.createReview(
@@ -58,7 +70,7 @@ public class ReviewController {
         );
 
         return "redirect:/perfumes/"
-                + reviewCreateDto.getPerfumeId()
+                + perfumeId
                 + "?reviewSubmitted=true";
     }
 
@@ -115,5 +127,20 @@ public class ReviewController {
         );
 
         return "redirect:/reviews/my?deleted=true";
+    }
+
+    private void preparePerfumeDetailsPage(
+            UUID perfumeId,
+            Model model
+    ) {
+        model.addAttribute(
+                "perfume",
+                perfumeService.getPerfumeById(perfumeId)
+        );
+
+        model.addAttribute(
+                "reviews",
+                reviewService.getApprovedReviewsForPerfume(perfumeId)
+        );
     }
 }

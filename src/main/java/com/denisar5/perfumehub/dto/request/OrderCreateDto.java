@@ -27,8 +27,9 @@ public class OrderCreateDto {
 
     @NotBlank(message = "Delivery address is required")
     @Size(
+            min = 5,
             max = 255,
-            message = "Delivery address cannot exceed 255 characters"
+            message = "Delivery address must be between 5 and 255 characters"
     )
     private String deliveryAddress;
 }
