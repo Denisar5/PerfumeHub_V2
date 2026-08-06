@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Orders | PerfumeHub</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link th:href="@{/css/styles.css}"
+          rel="stylesheet">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+<div th:replace="~{fragments/header :: header}"></div>
+
+<main class="container flex-grow-1 py-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>My Orders</h1>
+
+        <a th:href="@{/perfumes}"
+           class="btn btn-dark">
+            Continue Shopping
+        </a>
+    </div>
+
+    <div th:if="${param.created}"
+         class="alert alert-success">
+        Order created successfully.
+    </div>
+
+    <div th:if="${param.cancelled}"
+         class="alert alert-success">
+        Order cancelled successfully.
+    </div>
+
+    <div th:if="${#lists.isEmpty(orders)}"
+         class="empty-state">
+
+        <h3>You have no orders yet.</h3>
+
+        <a th:href="@{/perfumes}"
+           class="btn btn-dark mt-3">
+            Browse Perfumes
+        </a>
+    </div>
+
+    <div class="table-responsive"
+         th:unless="${#lists.isEmpty(orders)}">
+
+        <table class="table custom-table align-middle">
+
+            <thead>
+            <tr>
+                <th>Perfume</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>Ordered</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+
+            <tbody>
+
+            <tr th:each="order : ${orders}">
+
+                <td>
+                    <div class="table-product">
+                        <img th:src="${order.perfumeImageUrl}"
+                             th:alt="${order.perfumeName}">
+
+                        <span th:text="${order.perfumeName}">
+                            Perfume
+                        </span>
+                    </div>
+                </td>
+
+                <td th:text="${order.quantity}">
+                    1
+                </td>
+
+                <td>
+                    €<span th:text="${order.totalPrice}">
+                        100.00
+                    </span>
+                </td>
+
+                <td>
+                    <span class="status-badge"
+                          th:classappend="${
+                            ' status-' +
+                            #strings.toLowerCase(order.status.name())
+                          }"
+                          th:text="${order.status}">
+                        PENDING
+                    </span>
+                </td>
+
+                <td th:text="${#temporals.format(
+                    order.createdAt,
+                    'dd MMM yyyy HH:mm'
+                )}">
+                    Date
+                </td>
+
+                <td>
+                    <form th:if="${
+                            order.status.name() == 'PENDING'
+                            or order.status.name() == 'PROCESSING'
+                          }"
+                          th:action="@{/orders/{id}/cancel(id=${order.id})}"
+                          method="post">
+
+                        <button type="submit"
+                                class="btn btn-outline-danger btn-sm">
+                            Cancel
+                        </button>
+                    </form>
+                </td>
+
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+</main>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+
+</body>
+</html>

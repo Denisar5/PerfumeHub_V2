@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<footer th:fragment="footer"
+        class="footer mt-auto">
+
+    <div class="container py-5">
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <h5>PerfumeHub</h5>
+
+                <p>
+                    A curated catalog of premium fragrances
+                    for men, women and everyone.
+                </p>
+            </div>
+
+            <div class="col-md-4">
+                <h6>Explore</h6>
+
+                <p>
+                    <a th:href="@{/perfumes}">
+                        Perfume catalog
+                    </a>
+                </p>
+
+                <p>
+                    <a th:href="@{/register}">
+                        Create account
+                    </a>
+                </p>
+            </div>
+
+            <div class="col-md-4">
+                <h6>Contact</h6>
+
+                <p>support@perfumehub.com</p>
+                <p>+359 888 123 456</p>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <p class="text-center mb-0">
+            © 2026 PerfumeHub. Educational project.
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>

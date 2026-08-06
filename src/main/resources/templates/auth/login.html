@@ -5,66 +5,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+          content="width=device-width, initial-scale=1">
 
     <title>Login | PerfumeHub</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link th:href="@{/css/styles.css}"
+          rel="stylesheet">
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 
-<main>
-    <h1>Login</h1>
+<div th:replace="~{fragments/header :: header}"></div>
 
-    <div th:if="${param.error}">
-        <p style="color: red;">
-            Invalid username or password, or the account is disabled.
-        </p>
-    </div>
+<main class="container flex-grow-1 py-5">
 
-    <div th:if="${param.logout}">
-        <p style="color: green;">
+    <div class="form-card">
+
+        <div class="text-center mb-4">
+            <p class="form-eyebrow">WELCOME BACK</p>
+            <h1>Login</h1>
+        </div>
+
+        <div th:if="${param.error}"
+             class="alert alert-danger">
+            Invalid credentials or disabled account.
+        </div>
+
+        <div th:if="${param.logout}"
+             class="alert alert-success">
             You have logged out successfully.
-        </p>
-    </div>
+        </div>
 
-    <div th:if="${param.registered}">
-        <p style="color: green;">
+        <div th:if="${param.registered}"
+             class="alert alert-success">
             Registration successful. You may now log in.
+        </div>
+
+        <form th:action="@{/login}"
+              method="post">
+
+            <div class="mb-3">
+                <label for="username"
+                       class="form-label">
+                    Username
+                </label>
+
+                <input id="username"
+                       name="username"
+                       type="text"
+                       class="form-control"
+                       autocomplete="username"
+                       required>
+            </div>
+
+            <div class="mb-4">
+                <label for="password"
+                       class="form-label">
+                    Password
+                </label>
+
+                <input id="password"
+                       name="password"
+                       type="password"
+                       class="form-control"
+                       autocomplete="current-password"
+                       required>
+            </div>
+
+            <button type="submit"
+                    class="btn btn-dark w-100">
+                Login
+            </button>
+        </form>
+
+        <p class="text-center mt-4 mb-0">
+            No account?
+            <a th:href="@{/register}">
+                Register here
+            </a>
         </p>
+
     </div>
 
-    <form th:action="@{/login}" method="post">
-
-        <div>
-            <label for="username">Username</label>
-
-            <input id="username"
-                   name="username"
-                   type="text"
-                   autocomplete="username"
-                   required>
-        </div>
-
-        <div>
-            <label for="password">Password</label>
-
-            <input id="password"
-                   name="password"
-                   type="password"
-                   autocomplete="current-password"
-                   required>
-        </div>
-
-        <button type="submit">
-            Login
-        </button>
-    </form>
-
-    <p>
-        No account?
-        <a th:href="@{/register}">Register</a>
-    </p>
 </main>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
 
 </body>
 </html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<body>
+
+<header th:fragment="header">
+    <div class="top-bar">
+        Free delivery for orders over €99 · Original fragrances
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+        <div class="container">
+
+            <a class="navbar-brand" th:href="@{/}">
+                PerfumeHub
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mainNavbar"
+                    aria-controls="mainNavbar"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse"
+                 id="mainNavbar">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           th:href="@{/}">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           th:href="@{/perfumes}">
+                            Perfumes
+                        </a>
+                    </li>
+
+                    <li class="nav-item"
+                        sec:authorize="isAuthenticated()">
+                        <a class="nav-link"
+                           th:href="@{/orders/my}">
+                            My Orders
+                        </a>
+                    </li>
+
+                    <li class="nav-item"
+                        sec:authorize="isAuthenticated()">
+                        <a class="nav-link"
+                           th:href="@{/reviews/my}">
+                            My Reviews
+                        </a>
+                    </li>
+
+                    <li class="nav-item"
+                        sec:authorize="isAuthenticated()">
+                        <a class="nav-link"
+                           th:href="@{/profile}">
+                            Profile
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown"
+                        sec:authorize="hasRole('ADMIN')">
+
+                        <a class="nav-link dropdown-toggle"
+                           href="#"
+                           role="button"
+                           data-bs-toggle="dropdown">
+                            Administration
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item"
+                                   th:href="@{/admin/perfumes}">
+                                    Perfumes
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item"
+                                   th:href="@{/admin/orders}">
+                                    Orders
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item"
+                                   th:href="@{/admin/reviews}">
+                                    Reviews
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item"
+                                   th:href="@{/admin/users}">
+                                    Users
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+                <div class="d-flex align-items-center gap-2">
+
+                    <div sec:authorize="isAnonymous()"
+                         class="d-flex gap-2">
+
+                        <a class="btn btn-outline-dark btn-sm"
+                           th:href="@{/login}">
+                            Login
+                        </a>
+
+                        <a class="btn btn-dark btn-sm"
+                           th:href="@{/register}">
+                            Register
+                        </a>
+                    </div>
+
+                    <div sec:authorize="isAuthenticated()"
+                         class="d-flex align-items-center gap-3">
+
+                        <span class="small text-muted">
+                            Hello,
+                            <strong sec:authentication="name">
+                                username
+                            </strong>
+                        </span>
+
+                        <form th:action="@{/logout}"
+                              method="post">
+
+                            <button type="submit"
+                                    class="btn btn-outline-danger btn-sm">
+                                Logout
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+</body>
+</html>
