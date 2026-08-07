@@ -4,35 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29de4503-0388-411f-bde8-158c82492ee3" name="Changes" comment="refactor: restructure project as multi-module repository">
-      <change afterPath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/client/ReviewClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/client/dto/ReviewCreateRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/client/dto/ReviewResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/client/dto/ReviewStatisticsResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/client/dto/ReviewUpdateRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/review-service/src/main/java/com/denisar5/review_service/controller/ReviewRestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/review-service/src/main/java/com/denisar5/review_service/dto/ReviewCreateRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/review-service/src/main/java/com/denisar5/review_service/dto/ReviewResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/review-service/src/main/java/com/denisar5/review_service/dto/ReviewStatisticsResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/review-service/src/main/java/com/denisar5/review_service/dto/ReviewUpdateRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/review-service/src/main/java/com/denisar5/review_service/entity/Review.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/review-service/src/main/java/com/denisar5/review_service/exception/ApiErrorResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/review-service/src/main/java/com/denisar5/review_service/exception/DuplicateReviewException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/review-service/src/main/java/com/denisar5/review_service/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/review-service/src/main/java/com/denisar5/review_service/exception/ReviewNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/review-service/src/main/java/com/denisar5/review_service/exception/UnauthorizedReviewOperationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/review-service/src/main/java/com/denisar5/review_service/repository/ReviewRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/review-service/src/main/java/com/denisar5/review_service/service/ReviewService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/review-service/src/main/java/com/denisar5/review_service/service/impl/ReviewServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="29de4503-0388-411f-bde8-158c82492ee3" name="Changes" comment="feat: integrate review microservice using OpenFeign">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/db-forest-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/service/ReviewService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/service/impl/ReviewServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfumehub-main/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/perfumehub-main/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/PerfumehubMainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/PerfumehubMainApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/controller/AdminReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/controller/AdminReviewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/controller/PerfumeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/controller/PerfumeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/controller/ReviewController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfumehub-main/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/perfumehub-main/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +72,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.PerfumehubMainApplication.executor": "Run",
     "Spring Boot.ReviewServiceApplication.executor": "Run",
     "git-widget-placeholder": "main",
@@ -111,7 +89,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Spring Boot.PerfumehubMainApplication">
+  <component name="RunManager" selected="Spring Boot.ReviewServiceApplication">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="perfumehub-main" />
       <method v="2">
@@ -157,7 +135,8 @@
       <updated>1786012635674</updated>
       <workItem from="1786012637092" duration="81000" />
       <workItem from="1786012727993" duration="319000" />
-      <workItem from="1786013081247" duration="3009000" />
+      <workItem from="1786013081247" duration="3083000" />
+      <workItem from="1786090030156" duration="367000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: restructure project as multi-module repository">
       <option name="closed" value="true" />
@@ -167,7 +146,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786013240084</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: integrate review microservice using OpenFeign">
+      <option name="closed" value="true" />
+      <created>1786016126512</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1786016126512</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,6 +165,7 @@
       <path value="$PROJECT_DIR$/perfumehub-main" />
     </ignored-roots>
     <MESSAGE value="refactor: restructure project as multi-module repository" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: restructure project as multi-module repository" />
+    <MESSAGE value="feat: integrate review microservice using OpenFeign" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: integrate review microservice using OpenFeign" />
   </component>
 </project>
