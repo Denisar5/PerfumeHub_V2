@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29de4503-0388-411f-bde8-158c82492ee3" name="Changes" comment="feat: seed review microservice data">
-      <change afterPath="$PROJECT_DIR$/review-service/src/test/java/com/denisar5/review_service/ReviewServiceImplTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="29de4503-0388-411f-bde8-158c82492ee3" name="Changes" comment="test: add review microservice service tests" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,6 +58,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.ReviewServiceImplTest.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -85,7 +84,27 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.ReviewServiceImplTest">
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.denisar5.review_service.service" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.ReviewRestControllerTest">
+    <configuration name="ReviewRestControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="review-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.denisar5.review_service.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.denisar5.review_service.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.denisar5.review_service.controller.ReviewRestControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ReviewServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="review-service" />
       <extension name="coverage">
@@ -130,6 +149,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ReviewRestControllerTest" />
         <item itemvalue="JUnit.ReviewServiceImplTest" />
       </list>
     </recent_temporary>
@@ -152,7 +172,7 @@
       <workItem from="1786012637092" duration="81000" />
       <workItem from="1786012727993" duration="319000" />
       <workItem from="1786013081247" duration="3083000" />
-      <workItem from="1786090030156" duration="2530000" />
+      <workItem from="1786090030156" duration="2842000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: restructure project as multi-module repository">
       <option name="closed" value="true" />
@@ -210,7 +230,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786092490488</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="test: add review microservice service tests">
+      <option name="closed" value="true" />
+      <created>1786092846077</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1786092846077</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +254,7 @@
     <MESSAGE value="refactor: migrate review persistence to microservice" />
     <MESSAGE value="feat: add catalog search filtering and pagination" />
     <MESSAGE value="feat: seed review microservice data" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: seed review microservice data" />
+    <MESSAGE value="test: add review microservice service tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="test: add review microservice service tests" />
   </component>
 </project>
