@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29de4503-0388-411f-bde8-158c82492ee3" name="Changes" comment="feat: add scheduled catalog maintenance tasks">
-      <change afterPath="$PROJECT_DIR$/perfumehub-main/src/test/java/com/denisar5/perfumehub/controller/PerfumeControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/perfumehub-main/src/test/java/com/denisar5/perfumehub/controller/ReviewControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/perfumehub-main/src/test/java/com/denisar5/perfumehub/security/SecurityAccessTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/perfumehub-main/src/test/java/com/denisar5/perfumehub/service/AdminServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/perfumehub-main/src/test/java/com/denisar5/perfumehub/service/OrderServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/perfumehub-main/src/test/java/com/denisar5/perfumehub/service/PerfumeServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/perfumehub-main/src/test/java/com/denisar5/perfumehub/service/ReviewServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/perfumehub-main/src/test/java/com/denisar5/perfumehub/service/UserServiceImplTest.java" afterDir="false" />
+    <list default="true" id="29de4503-0388-411f-bde8-158c82492ee3" name="Changes" comment="refactor: remove db username and password">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/perfumehub-main/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +97,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\denis\IdeaProjects\untitled\PerfumeHub_V2" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.denisar5.review_service.service" />
     </key>
@@ -239,7 +235,7 @@
       <workItem from="1786012637092" duration="81000" />
       <workItem from="1786012727993" duration="319000" />
       <workItem from="1786013081247" duration="3083000" />
-      <workItem from="1786090030156" duration="6011000" />
+      <workItem from="1786090030156" duration="6611000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: restructure project as multi-module repository">
       <option name="closed" value="true" />
@@ -337,7 +333,31 @@
       <option name="project" value="LOCAL" />
       <updated>1786094010769</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="test: add main application service and security tests">
+      <option name="closed" value="true" />
+      <created>1786096763350</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1786096763350</updated>
+    </task>
+    <task id="LOCAL-00014" summary="docs: add project README and architecture documentation">
+      <option name="closed" value="true" />
+      <created>1786096941359</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1786096941359</updated>
+    </task>
+    <task id="LOCAL-00015" summary="refactor: remove db username and password">
+      <option name="closed" value="true" />
+      <created>1786097054552</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1786097054552</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -358,6 +378,9 @@
     <MESSAGE value="refactor: improve review API error handling" />
     <MESSAGE value="feat: add caching for perfume catalog data" />
     <MESSAGE value="feat: add scheduled catalog maintenance tasks" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add scheduled catalog maintenance tasks" />
+    <MESSAGE value="test: add main application service and security tests" />
+    <MESSAGE value="docs: add project README and architecture documentation" />
+    <MESSAGE value="refactor: remove db username and password" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: remove db username and password" />
   </component>
 </project>
