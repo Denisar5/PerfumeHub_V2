@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29de4503-0388-411f-bde8-158c82492ee3" name="Changes" comment="feat: add caching for perfume catalog data">
-      <change beforePath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/PerfumehubMainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/PerfumehubMainApplication.java" afterDir="false" />
+    <list default="true" id="29de4503-0388-411f-bde8-158c82492ee3" name="Changes" comment="feat: add scheduled catalog maintenance tasks">
+      <change afterPath="$PROJECT_DIR$/perfumehub-main/src/test/java/com/denisar5/perfumehub/controller/PerfumeControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/perfumehub-main/src/test/java/com/denisar5/perfumehub/controller/ReviewControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/perfumehub-main/src/test/java/com/denisar5/perfumehub/security/SecurityAccessTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/perfumehub-main/src/test/java/com/denisar5/perfumehub/service/AdminServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/perfumehub-main/src/test/java/com/denisar5/perfumehub/service/OrderServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/perfumehub-main/src/test/java/com/denisar5/perfumehub/service/PerfumeServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/perfumehub-main/src/test/java/com/denisar5/perfumehub/service/ReviewServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/perfumehub-main/src/test/java/com/denisar5/perfumehub/service/UserServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,8 +68,16 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.AdminServiceImplTest.executor": "Run",
+    "JUnit.OrderServiceImplTest.executor": "Run",
+    "JUnit.PerfumeControllerTest.executor": "Run",
+    "JUnit.PerfumeServiceImplTest.executor": "Run",
+    "JUnit.ReviewControllerTest.executor": "Run",
     "JUnit.ReviewRestControllerTest.executor": "Run",
+    "JUnit.ReviewServiceImplTest (1).executor": "Run",
     "JUnit.ReviewServiceImplTest.executor": "Run",
+    "JUnit.SecurityAccessTest.executor": "Run",
+    "JUnit.UserServiceImplTest.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -92,32 +108,77 @@
       <recent name="com.denisar5.review_service.service" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.PerfumehubMainApplication">
-    <configuration name="ReviewRestControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="review-service" />
+  <component name="RunManager" selected="JUnit.SecurityAccessTest">
+    <configuration name="AdminServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="perfumehub-main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.denisar5.review_service.controller.*" />
+          <option name="PATTERN" value="com.denisar5.perfumehub.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.denisar5.review_service.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.denisar5.review_service.controller.ReviewRestControllerTest" />
+      <option name="PACKAGE_NAME" value="com.denisar5.perfumehub.service" />
+      <option name="MAIN_CLASS_NAME" value="com.denisar5.perfumehub.service.AdminServiceImplTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReviewServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="review-service" />
+    <configuration name="PerfumeControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="perfumehub-main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.denisar5.review_service.service.*" />
+          <option name="PATTERN" value="com.denisar5.perfumehub.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.denisar5.review_service.service" />
-      <option name="MAIN_CLASS_NAME" value="com.denisar5.review_service.service.ReviewServiceImplTest" />
+      <option name="PACKAGE_NAME" value="com.denisar5.perfumehub.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.denisar5.perfumehub.controller.PerfumeControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReviewControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="perfumehub-main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.denisar5.perfumehub.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.denisar5.perfumehub.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.denisar5.perfumehub.controller.ReviewControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReviewServiceImplTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="perfumehub-main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.denisar5.perfumehub.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.denisar5.perfumehub.service" />
+      <option name="MAIN_CLASS_NAME" value="com.denisar5.perfumehub.service.ReviewServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SecurityAccessTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="perfumehub-main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.denisar5.perfumehub.security.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.denisar5.perfumehub.security" />
+      <option name="MAIN_CLASS_NAME" value="com.denisar5.perfumehub.security.SecurityAccessTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -152,8 +213,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ReviewRestControllerTest" />
-        <item itemvalue="JUnit.ReviewServiceImplTest" />
+        <item itemvalue="JUnit.SecurityAccessTest" />
+        <item itemvalue="JUnit.ReviewControllerTest" />
+        <item itemvalue="JUnit.PerfumeControllerTest" />
+        <item itemvalue="JUnit.AdminServiceImplTest" />
+        <item itemvalue="JUnit.ReviewServiceImplTest (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -175,7 +239,7 @@
       <workItem from="1786012637092" duration="81000" />
       <workItem from="1786012727993" duration="319000" />
       <workItem from="1786013081247" duration="3083000" />
-      <workItem from="1786090030156" duration="3774000" />
+      <workItem from="1786090030156" duration="6011000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: restructure project as multi-module repository">
       <option name="closed" value="true" />
@@ -265,7 +329,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786093781282</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="feat: add scheduled catalog maintenance tasks">
+      <option name="closed" value="true" />
+      <created>1786094010769</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1786094010769</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,6 +357,7 @@
     <MESSAGE value="test: add review microservice API tests" />
     <MESSAGE value="refactor: improve review API error handling" />
     <MESSAGE value="feat: add caching for perfume catalog data" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add caching for perfume catalog data" />
+    <MESSAGE value="feat: add scheduled catalog maintenance tasks" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add scheduled catalog maintenance tasks" />
   </component>
 </project>
