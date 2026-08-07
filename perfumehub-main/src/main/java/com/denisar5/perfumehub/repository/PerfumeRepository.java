@@ -16,4 +16,6 @@ public interface PerfumeRepository
     List<Perfume> findByVisibleTrueOrderByCreatedAtDesc();
 
     List<Perfume> findAllByOrderByCreatedAtDesc();
+
+    long countByVisibleTrue();
 }
