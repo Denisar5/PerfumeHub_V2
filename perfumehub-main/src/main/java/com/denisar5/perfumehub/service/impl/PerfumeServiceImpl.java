@@ -21,6 +21,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +40,7 @@ public class PerfumeServiceImpl implements PerfumeService {
     private final ReviewClient reviewClient;
 
     @Override
+    @CacheEvict(value = "perfumeBrands", allEntries = true)
     @Transactional
     public UUID createPerfume(PerfumeCreateDto dto) {
 
@@ -66,6 +69,7 @@ public class PerfumeServiceImpl implements PerfumeService {
     }
 
     @Override
+    @CacheEvict(value = "perfumeBrands", allEntries = true)
     @Transactional
     public void editPerfume(
             UUID perfumeId,
@@ -92,6 +96,7 @@ public class PerfumeServiceImpl implements PerfumeService {
     }
 
     @Override
+    @CacheEvict(value = "perfumeBrands", allEntries = true)
     @Transactional
     public void deletePerfume(UUID perfumeId) {
 
@@ -119,6 +124,7 @@ public class PerfumeServiceImpl implements PerfumeService {
     }
 
     @Override
+    @CacheEvict(value = "perfumeBrands", allEntries = true)
     @Transactional
     public void toggleVisibility(UUID perfumeId) {
 
@@ -214,8 +220,11 @@ public class PerfumeServiceImpl implements PerfumeService {
     }
 
     @Override
+    @Cacheable("perfumeBrands")
     @Transactional(readOnly = true)
     public List<String> getAvailableBrands() {
+
+        log.info("Loading perfume brands from database");
 
         return perfumeRepository
                 .findAll()
@@ -223,8 +232,7 @@ public class PerfumeServiceImpl implements PerfumeService {
                 .filter(Perfume::isVisible)
                 .map(Perfume::getBrand)
                 .filter(brand ->
-                        brand != null
-                                && !brand.isBlank()
+                        brand != null && !brand.isBlank()
                 )
                 .distinct()
                 .sorted(String.CASE_INSENSITIVE_ORDER)
