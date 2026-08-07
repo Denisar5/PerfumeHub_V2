@@ -1,9 +1,9 @@
 package com.denisar5.review_service.exception;
 
+import com.denisar5.review_service.dto.ApiErrorResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -16,7 +16,7 @@ import java.util.Map;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(ReviewNotFoundException.class)
-    public ResponseEntity<ApiErrorResponse> handleNotFound(
+    public ResponseEntity<ApiErrorResponse> handleReviewNotFound(
             ReviewNotFoundException exception,
             HttpServletRequest request
     ) {
@@ -29,7 +29,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(DuplicateReviewException.class)
-    public ResponseEntity<ApiErrorResponse> handleDuplicate(
+    public ResponseEntity<ApiErrorResponse> handleDuplicateReview(
             DuplicateReviewException exception,
             HttpServletRequest request
     ) {
@@ -42,7 +42,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(UnauthorizedReviewOperationException.class)
-    public ResponseEntity<ApiErrorResponse> handleUnauthorizedOperation(
+    public ResponseEntity<ApiErrorResponse> handleUnauthorizedReviewOperation(
             UnauthorizedReviewOperationException exception,
             HttpServletRequest request
     ) {
@@ -59,25 +59,28 @@ public class GlobalExceptionHandler {
             MethodArgumentNotValidException exception,
             HttpServletRequest request
     ) {
-        Map<String, String> validationErrors = new LinkedHashMap<>();
+        Map<String, String> validationErrors =
+                new LinkedHashMap<>();
 
-        for (FieldError fieldError : exception.getBindingResult().getFieldErrors()) {
-            validationErrors.put(
-                    fieldError.getField(),
-                    fieldError.getDefaultMessage()
-            );
-        }
+        exception.getBindingResult()
+                .getFieldErrors()
+                .forEach(error ->
+                        validationErrors.put(
+                                error.getField(),
+                                error.getDefaultMessage()
+                        )
+                );
 
         return buildResponse(
                 HttpStatus.BAD_REQUEST,
-                "Request validation failed",
+                "Validation failed",
                 request.getRequestURI(),
                 validationErrors
         );
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ApiErrorResponse> handleUnexpected(
+    public ResponseEntity<ApiErrorResponse> handleUnexpectedException(
             Exception exception,
             HttpServletRequest request
     ) {
@@ -95,15 +98,18 @@ public class GlobalExceptionHandler {
             String path,
             Map<String, String> validationErrors
     ) {
-        ApiErrorResponse response = ApiErrorResponse.builder()
-                .status(status.value())
-                .error(status.getReasonPhrase())
-                .message(message)
-                .path(path)
-                .timestamp(LocalDateTime.now())
-                .validationErrors(validationErrors)
-                .build();
+        ApiErrorResponse response =
+                ApiErrorResponse.builder()
+                        .status(status.value())
+                        .error(status.getReasonPhrase())
+                        .message(message)
+                        .path(path)
+                        .timestamp(LocalDateTime.now())
+                        .validationErrors(validationErrors)
+                        .build();
 
-        return ResponseEntity.status(status).body(response);
+        return ResponseEntity
+                .status(status)
+                .body(response);
     }
 }

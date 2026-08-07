@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29de4503-0388-411f-bde8-158c82492ee3" name="Changes" comment="test: add review microservice service tests" />
+    <list default="true" id="29de4503-0388-411f-bde8-158c82492ee3" name="Changes" comment="test: add review microservice API tests">
+      <change afterPath="$PROJECT_DIR$/review-service/src/main/java/com/denisar5/review_service/dto/ApiErrorResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/review-service/src/main/java/com/denisar5/review_service/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/review-service/src/main/java/com/denisar5/review_service/exception/GlobalExceptionHandler.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,6 +61,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.ReviewRestControllerTest.executor": "Run",
     "JUnit.ReviewServiceImplTest.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -172,7 +176,7 @@
       <workItem from="1786012637092" duration="81000" />
       <workItem from="1786012727993" duration="319000" />
       <workItem from="1786013081247" duration="3083000" />
-      <workItem from="1786090030156" duration="2842000" />
+      <workItem from="1786090030156" duration="3144000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: restructure project as multi-module repository">
       <option name="closed" value="true" />
@@ -238,7 +242,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786092846077</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="test: add review microservice API tests">
+      <option name="closed" value="true" />
+      <created>1786093030783</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1786093030783</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,6 +267,7 @@
     <MESSAGE value="feat: add catalog search filtering and pagination" />
     <MESSAGE value="feat: seed review microservice data" />
     <MESSAGE value="test: add review microservice service tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="test: add review microservice service tests" />
+    <MESSAGE value="test: add review microservice API tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="test: add review microservice API tests" />
   </component>
 </project>

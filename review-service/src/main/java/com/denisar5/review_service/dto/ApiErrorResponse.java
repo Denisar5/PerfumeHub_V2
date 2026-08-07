@@ -1,4 +1,4 @@
-package com.denisar5.review_service.exception;
+package com.denisar5.review_service.dto;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -11,14 +11,9 @@ import java.util.Map;
 public class ApiErrorResponse {
 
     private int status;
-
     private String error;
-
     private String message;
-
     private String path;
-
     private LocalDateTime timestamp;
-
     private Map<String, String> validationErrors;
 }
