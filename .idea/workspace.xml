@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29de4503-0388-411f-bde8-158c82492ee3" name="Changes" comment="feat: implement review microservice and Feign integration">
+    <list default="true" id="29de4503-0388-411f-bde8-158c82492ee3" name="Changes" comment="refactor: migrate review persistence to microservice">
+      <change afterPath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/dto/request/PerfumeSearchDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/controller/ReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/controller/ReviewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/controller/PerfumeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/controller/PerfumeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/repository/PerfumeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/repository/PerfumeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/service/PerfumeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/service/PerfumeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/service/impl/PerfumeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/perfumehub-main/src/main/java/com/denisar5/perfumehub/service/impl/PerfumeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/perfumehub-main/src/main/resources/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/perfumehub-main/src/main/resources/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/perfumehub-main/src/main/resources/templates/perfume/catalog.html" beforeDir="false" afterPath="$PROJECT_DIR$/perfumehub-main/src/main/resources/templates/perfume/catalog.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +139,7 @@
       <workItem from="1786012637092" duration="81000" />
       <workItem from="1786012727993" duration="319000" />
       <workItem from="1786013081247" duration="3083000" />
-      <workItem from="1786090030156" duration="1279000" />
+      <workItem from="1786090030156" duration="1896000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: restructure project as multi-module repository">
       <option name="closed" value="true" />
@@ -167,7 +173,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786090947303</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="refactor: migrate review persistence to microservice">
+      <option name="closed" value="true" />
+      <created>1786091390577</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1786091390577</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,6 +194,7 @@
     <MESSAGE value="refactor: restructure project as multi-module repository" />
     <MESSAGE value="feat: integrate review microservice using OpenFeign" />
     <MESSAGE value="feat: implement review microservice and Feign integration" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implement review microservice and Feign integration" />
+    <MESSAGE value="refactor: migrate review persistence to microservice" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: migrate review persistence to microservice" />
   </component>
 </project>

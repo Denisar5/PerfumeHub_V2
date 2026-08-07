@@ -1,13 +1,18 @@
 package com.denisar5.perfumehub.controller;
 
-import com.denisar5.perfumehub.client.ReviewClient;
 import com.denisar5.perfumehub.dto.request.OrderCreateDto;
+import com.denisar5.perfumehub.dto.request.PerfumeSearchDto;
+import com.denisar5.perfumehub.dto.response.PerfumeViewDto;
 import com.denisar5.perfumehub.dto.request.ReviewCreateDto;
+import com.denisar5.perfumehub.enums.Gender;
 import com.denisar5.perfumehub.service.PerfumeService;
+import com.denisar5.perfumehub.service.ReviewService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -19,13 +24,35 @@ import java.util.UUID;
 public class PerfumeController {
 
     private final PerfumeService perfumeService;
-    private final ReviewClient reviewClient;
+    private final ReviewService reviewService;
 
     @GetMapping
-    public String getCatalog(Model model) {
+    public String getCatalog(
+            @ModelAttribute("searchDto")
+            PerfumeSearchDto searchDto,
+            Model model
+    ) {
+        Page<PerfumeViewDto> perfumePage =
+                perfumeService.searchPerfumes(searchDto);
+
+        model.addAttribute(
+                "perfumePage",
+                perfumePage
+        );
+
         model.addAttribute(
                 "perfumes",
-                perfumeService.getVisiblePerfumes()
+                perfumePage.getContent()
+        );
+
+        model.addAttribute(
+                "brands",
+                perfumeService.getAvailableBrands()
+        );
+
+        model.addAttribute(
+                "genders",
+                Gender.values()
         );
 
         return "perfume/catalog";
@@ -36,30 +63,6 @@ public class PerfumeController {
             @PathVariable UUID perfumeId,
             Model model
     ) {
-        prepareDetailsPage(perfumeId, model);
-
-        if (!model.containsAttribute("orderCreateDto")) {
-            OrderCreateDto orderCreateDto = new OrderCreateDto();
-            orderCreateDto.setPerfumeId(perfumeId);
-            orderCreateDto.setQuantity(1);
-
-            model.addAttribute("orderCreateDto", orderCreateDto);
-        }
-
-        if (!model.containsAttribute("reviewCreateDto")) {
-            ReviewCreateDto reviewCreateDto = new ReviewCreateDto();
-            reviewCreateDto.setPerfumeId(perfumeId);
-
-            model.addAttribute("reviewCreateDto", reviewCreateDto);
-        }
-
-        return "perfume/details";
-    }
-
-    public void prepareDetailsPage(
-            UUID perfumeId,
-            Model model
-    ) {
         model.addAttribute(
                 "perfume",
                 perfumeService.getPerfumeById(perfumeId)
@@ -67,7 +70,30 @@ public class PerfumeController {
 
         model.addAttribute(
                 "reviews",
-                reviewClient.getApprovedReviewsForPerfume(perfumeId)
+                reviewService.getApprovedReviewsForPerfume(perfumeId)
         );
+
+        OrderCreateDto orderCreateDto =
+                new OrderCreateDto();
+
+        orderCreateDto.setPerfumeId(perfumeId);
+        orderCreateDto.setQuantity(1);
+
+        ReviewCreateDto reviewCreateDto =
+                new ReviewCreateDto();
+
+        reviewCreateDto.setPerfumeId(perfumeId);
+
+        model.addAttribute(
+                "orderCreateDto",
+                orderCreateDto
+        );
+
+        model.addAttribute(
+                "reviewCreateDto",
+                reviewCreateDto
+        );
+
+        return "perfume/details";
     }
 }
