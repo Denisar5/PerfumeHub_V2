@@ -34,7 +34,6 @@ public class DataInitializer implements CommandLineRunner {
     public void run(String... args) {
         seedUsers();
         seedPerfumes();
-        seedReviews();
         seedOrders();
     }
 
@@ -204,38 +203,6 @@ public class DataInitializer implements CommandLineRunner {
         perfumeRepository.saveAll(perfumes);
 
         log.info("Seeded initial perfumes");
-    }
-
-    private void seedReviews() {
-
-
-        UserEntity denis = userRepository.findByUsername("denis")
-                .orElseThrow();
-
-        UserEntity alex = userRepository.findByUsername("alex")
-                .orElseThrow();
-
-        List<Perfume> perfumes =
-                perfumeRepository.findAllByOrderByCreatedAtDesc();
-
-        Perfume sauvage = findPerfumeByName(
-                perfumes,
-                "Sauvage Eau de Parfum"
-        );
-
-        Perfume libre = findPerfumeByName(
-                perfumes,
-                "Libre Eau de Parfum"
-        );
-
-        Perfume oudWood = findPerfumeByName(
-                perfumes,
-                "Oud Wood"
-        );
-
-
-
-        log.info("Seeded initial reviews");
     }
 
     private void seedOrders() {
