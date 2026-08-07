@@ -28,10 +28,10 @@ public class PerfumeController {
 
     @GetMapping
     public String getCatalog(
-            @ModelAttribute("searchDto")
-            PerfumeSearchDto searchDto,
+            @ModelAttribute("searchDto") PerfumeSearchDto searchDto,
             Model model
     ) {
+
         Page<PerfumeViewDto> perfumePage =
                 perfumeService.searchPerfumes(searchDto);
 
@@ -63,6 +63,7 @@ public class PerfumeController {
             @PathVariable UUID perfumeId,
             Model model
     ) {
+
         model.addAttribute(
                 "perfume",
                 perfumeService.getPerfumeById(perfumeId)
